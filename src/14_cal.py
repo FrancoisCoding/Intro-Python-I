@@ -22,3 +22,27 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+
+def getCalendar():
+    date = datetime.now()
+    year = date.year
+    month = date.month
+    userInput = input('Please input a month and year seperated by comma:')
+
+    if userInput != '':
+        userMonth = userInput.split(',')[0]
+        userYear = userInput.split(',')[1]
+        print('------------Input------------', userMonth, userYear)
+
+    if userInput == '':
+        print(calendar.month(year, month))
+    elif userYear == '':
+        print(calendar.month(int(year), int(userMonth)))
+    elif userYear:
+        print(calendar.month(int(userYear), int(userMonth)))
+    else:
+        print('Please provide a month and a year in this format: Month,Year')
+
+
+getCalendar()

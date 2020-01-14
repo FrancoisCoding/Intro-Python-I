@@ -81,10 +81,7 @@ d = {
     "hp": 3
 }
 
-res = ",".join(("{}={}".format(*i) for i in d.items()))
-print(res)
 
 # What thing do you have to add to make this work?
-f4(res)
-
 print('---- 4 ----')
+print(f4(**d))
